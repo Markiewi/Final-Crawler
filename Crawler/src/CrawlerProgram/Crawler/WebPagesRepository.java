@@ -19,9 +19,9 @@ public class WebPagesRepository {
     public void Writer(String localization) {
         try {
             for (WebPage webPage : History) {
-                File file = new File(localization + File.separator + webPage.url.replaceAll("[^a-zA-Z0-9]+", " ") + ".html");
+                File file = new File(localization + File.separator + webPage.url.replaceAll("[^a-zA-Z0-9]+", " ") + ".txt");
                 PrintWriter writer = new PrintWriter(file, "UTF-8");
-                writer.write(webPage.doc.html());
+                writer.write(webPage.doc.text());
                 writer.flush();
                 writer.close();
             }
